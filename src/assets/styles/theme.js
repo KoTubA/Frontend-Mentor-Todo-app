@@ -1,32 +1,41 @@
+import bgMobileDark from 'assets/images/bg-mobile-dark.jpg';
+import bgDesktopDark from 'assets/images/bg-desktop-dark.jpg';
+import bgMobileLight from 'assets/images/bg-mobile-light.jpg';
+import bgDesktopLight from 'assets/images/bg-desktop-light.jpg';
+import iconMoon from 'assets/icons/icon-moon.svg';
+import iconSun from 'assets/icons/icon-sun.svg';
+
 export const theme = {
-  colors: {
-    primary: {
-      white: '#FFFFFF',
-      brightBlue: 'hsl(220, 98%, 61%)',
-      checkBackground: 'linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)',
-    },
-    dark: {
-      grayishBlue: 'hsl(235deg 16% 43%)',
-      veryDarkBlue: 'hsl(235, 21%, 11%)',
-      veryDarkDesaturatedBlue: 'hsl(235, 24%, 19%)',
-      lightGrayishBlue: 'hsl(234, 39%, 85%)',
-      lightGrayishBlueHover: 'hsl(236, 33%, 92%)',
-      darkGrayishBlue: 'hsl(234, 11%, 52%)',
-      veryDarkGrayishBlue: 'hsl(233, 14%, 35%)',
-      veryDarkGrayishBlueHover: 'hsl(237, 14%, 26%)',
-    },
-    light: {
-      veryLightGray: 'hsl(0, 0%, 98%)',
-      veryLightGrayishBlue: 'hsl(236, 33%, 92%)',
-      lightGrayishBlue: 'hsl(233, 11%, 84%)',
-      darkGrayishBlue: 'hsl(236, 9%, 61%)',
-      veryDarkGrayishBlue: 'hsl(235, 19%, 35%)',
-    },
+  dark: {
+    white: '#FFFFFF',
+    brightBlue: 'hsl(220, 98%, 61%)',
+    checkBackground: 'linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)',
+    bgMobile: bgMobileDark,
+    bgDesktop: bgDesktopDark,
+    colorText1: 'hsl(234deg 39% 85%)',
+    colorText2: 'hsl(235deg 16% 43%)',
+    colorText3: 'hsl(233deg 14% 35%)',
+    bgApp: 'hsl(235deg 21% 11%)',
+    bgComponent: 'hsl(235deg 24% 19%)',
+    colorCircle: 'hsl(237deg 14% 26%)',
+    colorTodoBorder: 'hsl(237deg 14% 26%)',
+    componentShadow: '0 35px 50px -15px hsl(0deg 0% 0% / 50%)',
+    icon: iconSun,
   },
-  fontSize: {
-    xs: '12px',
-    s: '14px',
-    m: '18px',
-    xl: '40px',
+  light: {
+    white: '#FFFFFF',
+    brightBlue: 'hsl(220, 98%, 61%)',
+    checkBackground: 'linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)',
+    bgMobile: bgMobileLight,
+    bgDesktop: bgDesktopLight,
+    colorText1: 'hsl(235deg 19% 35%)',
+    colorText2: 'hsl(236deg 9% 61%)',
+    colorText3: 'hsl(233deg 11% 84%)',
+    bgApp: 'hsl(0deg 0% 98%)',
+    bgComponent: 'hsl(0deg 0% 100%)',
+    colorCircle: 'hsl(236deg 33% 92%)',
+    colorTodoBorder: 'hsl(236deg 33% 92%)',
+    componentShadow: '0 35px 50px -15px rgba(194,195,214,0.5)',
+    icon: iconMoon,
   },
 };

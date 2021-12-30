@@ -17,9 +17,9 @@ export const Wrapper = styled.div`
   align-items: center;
   position: fixed;
   margin-top: 15px;
-  box-shadow: 0 35px 50px -15px rgba(0, 0, 0, 0.5);
+  box-shadow: ${({ theme }) => theme.componentShadow};
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.colors.dark.veryDarkDesaturatedBlue};
+  background-color: ${({ theme }) => theme.bgComponent};
   margin-left: auto;
   margin-right: auto;
   padding: 14px 20px;

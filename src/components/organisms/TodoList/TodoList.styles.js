@@ -5,10 +5,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 35px 50px -15px rgba(0, 0, 0, 0.5);
+  box-shadow: ${({ theme }) => theme.componentShadow};
   border-radius: 5px;
   overflow: hidden;
-  background-color: ${({ theme }) => theme.colors.dark.veryDarkDesaturatedBlue};
+  background-color: ${({ theme }) => theme.bgComponent};
   margin-top: 18px;
   position: relative;
 

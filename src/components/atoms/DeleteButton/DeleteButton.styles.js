@@ -4,7 +4,7 @@ export const DeleteStyledButton = styled.button`
   width: 12px;
   height: 12px;
   border: none;
-  color: ${({ theme }) => theme.colors.primary.white};
+  color: ${({ theme }) => theme.white};
   background-color: transparent;
   margin-left: auto;
   cursor: pointer;

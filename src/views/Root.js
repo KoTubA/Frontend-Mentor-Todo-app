@@ -1,14 +1,14 @@
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from 'assets/styles/globalStyles';
-import { theme } from 'assets/styles/theme';
 import TodoWrapper from 'components/templates/TodoWrapper/TodoWrapper';
+import ThemeStore from 'provider/ThemeStore';
+import Theme from 'provider/Theme';
 
 function Root() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <TodoWrapper />
-    </ThemeProvider>
+    <ThemeStore>
+      <Theme>
+        <TodoWrapper />
+      </Theme>
+    </ThemeStore>
   );
 }
 

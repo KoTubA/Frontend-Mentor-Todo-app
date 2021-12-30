@@ -2,21 +2,21 @@ import styled from 'styled-components';
 
 export const Input = styled.input`
   width: 100%;
-  font-size: ${({ theme }) => theme.fontSize.xs};
-  line-height: ${({ theme }) => theme.fontSize.xs};
-  background-color: ${({ theme }) => theme.colors.dark.veryDarkDesaturatedBlue};
-  color: ${({ theme }) => theme.colors.primary.white};
+  font-size: 12px;
+  line-height: 12px;
+  background-color: ${({ theme }) => theme.bgComponent};
+  color: ${({ theme }) => theme.colorText1};
   border: none;
   outline: none;
   flex: 1 1;
   padding: 0;
 
   @media (min-width: 768px) {
-    font-size: ${({ theme }) => theme.fontSize.m};
-    line-height: ${({ theme }) => theme.fontSize.m};
+    font-size: 18px;
+    line-height: 18px;
   }
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.dark.grayishBlue};
+    color: ${({ theme }) => theme.colorText2};
   }
 `;

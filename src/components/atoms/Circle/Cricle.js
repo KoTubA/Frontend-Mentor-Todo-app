@@ -5,7 +5,7 @@ export const Circle = styled.div`
   height: 20px;
   border-radius: 50%;
   margin-right: 12px;
-  border: 1px solid ${({ theme }) => theme.colors.dark.veryDarkGrayishBlueHover};
+  border: 1px solid ${({ theme }) => theme.colorCircle};
 
   @media (min-width: 768px) {
     width: 24px;

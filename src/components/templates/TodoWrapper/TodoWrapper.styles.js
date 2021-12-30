@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import bgMobileDark from 'assets/images/bg-mobile-dark.jpg';
-import bgDesktopDark from 'assets/images/bg-desktop-dark.jpg';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -9,7 +7,7 @@ export const Wrapper = styled.div`
   min-height: 100vh;
   height: 100%;
   position: relative;
-  background-color: ${({ theme }) => theme.colors.dark.veryDarkBlue};
+  background-color: ${({ theme }) => theme.bgApp};
   z-index: 1;
 
   &::before {
@@ -19,7 +17,7 @@ export const Wrapper = styled.div`
     right: 0;
     top: 0;
     height: 200px;
-    background-image: url(${bgMobileDark});
+    background-image: url(${({ theme }) => theme.bgMobile});
     background-size: cover;
     background-position: 50%;
     background-repeat: no-repeat;
@@ -28,7 +26,7 @@ export const Wrapper = styled.div`
 
   @media (min-width: 768px) {
     &::before {
-      background-image: url(${bgDesktopDark});
+      background-image: url(${({ theme }) => theme.bgDesktop});
       height: 300px;
     }
   }

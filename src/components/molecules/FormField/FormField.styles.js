@@ -7,9 +7,9 @@ export const Wrapper = styled.div`
   width: 100%;
   margin-top: 10px;
   border-radius: 5px;
-  box-shadow: 0 35px 50px -15px rgba(0, 0, 0, 0.5);
+  box-shadow: ${({ theme }) => theme.componentShadow};
   padding: 14px 20px;
-  background-color: ${({ theme }) => theme.colors.dark.veryDarkDesaturatedBlue};
+  background-color: ${({ theme }) => theme.bgComponent};
 
   @media (min-width: 768px) {
     margin-top: 45px;
