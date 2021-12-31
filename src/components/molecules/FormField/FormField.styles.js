@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.bgComponent};
 
   @media (min-width: 768px) {
-    margin-top: 45px;
+    margin-top: 43px;
     padding: 20px 24px;
   }
 `;

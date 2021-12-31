@@ -4,13 +4,24 @@ import React from 'react';
 import { PositionWrapper, Wrapper } from './TodoFilter.styles';
 
 const TodoFilter = () => {
-  const { showAllTasks, showActiveTasks, showCompletedTasks } = useTodo();
+  const {
+    tasksState: { activeFilter },
+    showAllTasks,
+    showActiveTasks,
+    showCompletedTasks,
+  } = useTodo();
   return (
     <PositionWrapper>
       <Wrapper>
-        <FilterButton onClick={showAllTasks}>All</FilterButton>
-        <FilterButton onClick={showActiveTasks}>Active</FilterButton>
-        <FilterButton onClick={showCompletedTasks}>Completed</FilterButton>
+        <FilterButton onClick={showAllTasks} activeFilter={activeFilter} filterName={'all'}>
+          All
+        </FilterButton>
+        <FilterButton onClick={showActiveTasks} activeFilter={activeFilter} filterName={'active'}>
+          Active
+        </FilterButton>
+        <FilterButton onClick={showCompletedTasks} activeFilter={activeFilter} filterName={'completed'}>
+          Completed
+        </FilterButton>
       </Wrapper>
     </PositionWrapper>
   );

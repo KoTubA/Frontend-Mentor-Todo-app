@@ -15,6 +15,10 @@ export const DeleteStyledButton = styled.button`
     height: 18px;
   }
 
+  &:hover svg path {
+    fill: ${({ theme }) => theme.colorText1};
+  }
+
   svg {
     width: 100%;
     height: 100%;

@@ -9,7 +9,7 @@ export const theme = {
   dark: {
     white: '#FFFFFF',
     brightBlue: 'hsl(220, 98%, 61%)',
-    checkBackground: 'linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)',
+    checkBackground: 'linear-gradient(135deg, #5df, #c058f3)',
     bgMobile: bgMobileDark,
     bgDesktop: bgDesktopDark,
     colorText1: 'hsl(234deg 39% 85%)',
@@ -25,7 +25,7 @@ export const theme = {
   light: {
     white: '#FFFFFF',
     brightBlue: 'hsl(220, 98%, 61%)',
-    checkBackground: 'linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)',
+    checkBackground: 'linear-gradient(135deg, #5df, #c058f3)',
     bgMobile: bgMobileLight,
     bgDesktop: bgDesktopLight,
     colorText1: 'hsl(235deg 19% 35%)',

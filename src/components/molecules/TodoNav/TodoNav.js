@@ -3,13 +3,21 @@ import { Wrapper } from './TodoNav.styles';
 import { Status } from 'components/atoms/Status/Status';
 import TodoFilter from 'components/molecules/TodoFilter/TodoFilter';
 import { ClearButton } from 'components/atoms/ClearButton/ClearButton';
+import { useTodo } from 'provider/TodoStore';
 
-const TodoNav = () => (
-  <Wrapper>
-    <Status>5 items left</Status>
-    <TodoFilter />
-    <ClearButton>Clear Completed</ClearButton>
-  </Wrapper>
-);
+const TodoNav = () => {
+  const {
+    tasksState: { tasks },
+    clearCompletedTasks,
+  } = useTodo();
+
+  return (
+    <Wrapper>
+      <Status>{tasks.filter((data) => data.completed === false).length} items left</Status>
+      <TodoFilter />
+      <ClearButton onClick={clearCompletedTasks}>Clear Completed</ClearButton>
+    </Wrapper>
+  );
+};
 
 export default TodoNav;
