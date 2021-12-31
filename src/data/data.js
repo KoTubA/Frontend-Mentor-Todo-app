@@ -1,1 +1,32 @@
-export const title = ['Complete online JavaScript course', 'Jog around the park 3x', '10 minutes meditation', 'Read for 1 hour', 'Pick up groceries', 'Complete Todo App on Frontend Mentor'];
+export const data = [
+  {
+    id: 1,
+    name: 'Complete online JavaScript course',
+    completed: true,
+  },
+  {
+    id: 2,
+    name: 'Jog around the park 3x',
+    completed: false,
+  },
+  {
+    id: 3,
+    name: '10 minutes meditation',
+    completed: false,
+  },
+  {
+    id: 4,
+    name: 'Read for 1 hour',
+    completed: false,
+  },
+  {
+    id: 5,
+    name: 'Pick up groceries',
+    completed: false,
+  },
+  {
+    id: 6,
+    name: 'Complete Todo App on Frontend Mentor',
+    completed: false,
+  },
+];
