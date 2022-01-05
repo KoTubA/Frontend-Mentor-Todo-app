@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const DeleteStyledButton = styled.button`
+export const DeleteStyledButton = styled.div`
   width: 12px;
   height: 12px;
   border: none;

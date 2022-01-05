@@ -20,7 +20,6 @@ const TodoListItem = React.forwardRef(({ titleData, dataId, taskState, ...props 
   return (
     <Wrapper ref={ref} {...props}>
       <CompleteButton
-        as="button"
         isCompleted={taskState}
         onClick={() => {
           handleToggleTask(dataId, taskState);

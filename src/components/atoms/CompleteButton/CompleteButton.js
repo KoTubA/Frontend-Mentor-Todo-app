@@ -8,6 +8,7 @@ export const CompleteButton = styled(Circle)`
   cursor: pointer;
   border: none;
   background-image: ${(props) => (props.isCompleted ? ({ theme }) => theme.checkBackground : 'none')};
+  padding: 1px 6px;
 
   &:hover {
     background-color: transparent;
