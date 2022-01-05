@@ -1,13 +1,16 @@
-import React, { useReducer, useContext, useEffect, useState } from 'react';
+import React, { useReducer, useContext, useEffect } from 'react';
 import { data } from 'data/data';
 const TodoContext = React.createContext({});
 
 const isData = localStorage.getItem('data');
 const dataTasks = isData ? JSON.parse(isData) : data;
 
-let maxId = dataTasks[0].id;
-for (let i = 1; i < dataTasks.length; i++) {
-  if (maxId < dataTasks[i].id) maxId = dataTasks[i].id;
+let maxId = 1;
+if (dataTasks.length) {
+  maxId = dataTasks[0].id;
+  for (let i = 1; i < dataTasks.length; i++) {
+    if (maxId < dataTasks[i].id) maxId = dataTasks[i].id;
+  }
 }
 
 const actionTypes = {
@@ -18,6 +21,7 @@ const actionTypes = {
   showActiveTasks: 'SHOW ACTIVE TASKS',
   showCompletedTasks: 'SHOW COMPLETED TASKS',
   clearCompletedTasks: 'CLEAR COMPLETED TASKS',
+  reorderTasks: 'REORDER TASKS',
 };
 
 const reducer = (state, action) => {
@@ -72,6 +76,15 @@ const reducer = (state, action) => {
         ...state,
         tasks: state.tasks.filter((task) => !task.completed),
       };
+    case actionTypes.reorderTasks:
+      const tempState = state.tasks.map(({ id, name, completed }) => ({ id, name, completed }));
+      const element = tempState[action.result.source.index];
+      tempState.splice(action.result.source.index, 1);
+      tempState.splice(action.result.destination.index, 0, element);
+      return {
+        ...state,
+        tasks: tempState,
+      };
     default:
       return state;
   }
@@ -117,7 +130,11 @@ export const TodoStore = ({ children }) => {
     dispatch({ type: actionTypes.toggleTaskState, id, state });
   };
 
-  return <TodoContext.Provider value={{ tasksState, showAllTasks, showActiveTasks, showCompletedTasks, clearCompletedTasks, addTask, removeTask, toggleTaskState }}>{children}</TodoContext.Provider>;
+  const reorderTasks = (result) => {
+    dispatch({ type: actionTypes.reorderTasks, result });
+  };
+
+  return <TodoContext.Provider value={{ tasksState, showAllTasks, showActiveTasks, showCompletedTasks, clearCompletedTasks, addTask, removeTask, toggleTaskState, reorderTasks }}>{children}</TodoContext.Provider>;
 };
 
 export const useTodo = () => {

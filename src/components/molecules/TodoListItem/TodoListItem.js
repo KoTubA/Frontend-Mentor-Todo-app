@@ -6,7 +6,7 @@ import { Wrapper } from './TodoListItem.styles';
 import { useTodo } from 'provider/TodoStore';
 import { ReactComponent as CheckIcon } from 'assets/icons/icon-check.svg';
 
-const TodoListItem = ({ titleData, dataId, taskState }) => {
+const TodoListItem = React.forwardRef(({ titleData, dataId, taskState, ...props }, ref) => {
   const { removeTask, toggleTaskState } = useTodo();
 
   const handleDeleteTask = (id) => {
@@ -18,7 +18,7 @@ const TodoListItem = ({ titleData, dataId, taskState }) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper ref={ref} {...props}>
       <CompleteButton
         as="button"
         isCompleted={taskState}
@@ -36,6 +36,6 @@ const TodoListItem = ({ titleData, dataId, taskState }) => {
       />
     </Wrapper>
   );
-};
+});
 
 export default TodoListItem;

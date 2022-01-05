@@ -10,6 +10,11 @@ export const CompleteButton = styled(Circle)`
   border: none;
   background-image: ${(props) => (props.isCompleted ? ({ theme }) => theme.checkBackground : 'none')};
 
+  &:hover {
+    background-color: transparent;
+    background-image: ${({ theme }) => theme.checkBackground};
+  }
+
   ${(props) => {
     if (props.isCompleted) {
       return `

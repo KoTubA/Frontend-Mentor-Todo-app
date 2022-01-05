@@ -1,9 +1,10 @@
 import React from 'react';
 import TodoListItem from 'components/molecules/TodoListItem/TodoListItem';
-import { Wrapper } from './TodoList.styles';
+import { Wrapper, TodoListItemsWrapper } from './TodoList.styles';
 import TodoNav from 'components/molecules/TodoNav/TodoNav';
 import { useTodo } from 'provider/TodoStore';
 import EmptyList from 'components/molecules/EmptyList/EmptyList';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const filterMap = {
   all: () => true,
@@ -14,10 +15,33 @@ const filterMap = {
 const TodoList = () => {
   const {
     tasksState: { tasks, activeFilter },
+    reorderTasks,
   } = useTodo();
+
+  const handleOnDragEnd = (result) => {
+    if (result.destination) reorderTasks(result);
+  };
+
   return (
     <Wrapper>
-      {tasks.length ? tasks.filter(filterMap[activeFilter]).map((data) => <TodoListItem titleData={data.name} key={data.id} dataId={data.id} taskState={data.completed} />) : <EmptyList />}
+      {tasks.length ? (
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Droppable droppableId="todo">
+            {(provided) => (
+              <TodoListItemsWrapper {...provided.droppableProps} ref={provided.innerRef}>
+                {tasks.filter(filterMap[activeFilter]).map((data, index) => (
+                  <Draggable key={data.id} draggableId={`${data.id}`} index={index}>
+                    {(provided) => <TodoListItem titleData={data.name} key={data.id} dataId={data.id} taskState={data.completed} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} />}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </TodoListItemsWrapper>
+            )}
+          </Droppable>
+        </DragDropContext>
+      ) : (
+        <EmptyList />
+      )}
       {tasks.length ? <TodoNav /> : null}
     </Wrapper>
   );

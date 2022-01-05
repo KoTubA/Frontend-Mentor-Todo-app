@@ -13,10 +13,7 @@ export const DeleteStyledButton = styled.button`
   @media (min-width: 768px) {
     width: 18px;
     height: 18px;
-  }
-
-  &:hover svg path {
-    fill: ${({ theme }) => theme.colorText1};
+    display: none;
   }
 
   svg {

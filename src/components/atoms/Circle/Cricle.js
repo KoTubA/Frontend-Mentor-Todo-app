@@ -5,8 +5,8 @@ export const Circle = styled.div`
   height: 20px;
   border-radius: 50%;
   margin-right: 12px;
-  background-image: ${(props) => (props.isActive ? ({ theme }) => theme.checkBackground : 'none')};
-  background-color: ${(props) => (props.isActive ? 'transparent' : ({ theme }) => theme.colorCircle)};
+  background-image: none;
+  background-color: ${({ theme }) => theme.colorCircle};
   position: relative;
 
   &::before {
@@ -15,15 +15,10 @@ export const Circle = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 19px;
-    height: 19px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background-color: ${({ theme }) => theme.bgComponent};
-  }
-
-  &:hover {
-    background-color: transparent;
-    background-image: ${({ theme }) => theme.checkBackground};
   }
 
   @media (min-width: 768px) {
@@ -32,8 +27,8 @@ export const Circle = styled.div`
     margin-right: 24px;
 
     &::before {
-      width: 23px;
-      height: 23px;
+      width: 22px;
+      height: 22px;
     }
   }
 `;
