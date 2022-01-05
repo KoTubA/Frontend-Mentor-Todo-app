@@ -73,11 +73,10 @@ const reducer = (state, action) => {
         tasks: state.tasks.filter((task) => !task.completed),
       };
     case actionTypes.reorderTasks:
-      console.log(action.result);
       const items = [...state.tasks];
       const [reorderedItem] = items.splice(action.result.source.index, 1);
       items.splice(action.result.destination.index, 0, reorderedItem);
-      console.log(items);
+
       return {
         ...state,
         tasks: items,
