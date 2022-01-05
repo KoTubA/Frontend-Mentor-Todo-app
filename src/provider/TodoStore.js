@@ -35,7 +35,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         tasks: state.tasks.filter((task) => {
-          if (task.id === Number(action.id)) {
+          if (task.id === action.id) {
             return false;
           }
           return true;
@@ -45,12 +45,8 @@ const reducer = (state, action) => {
       return {
         ...state,
         tasks: state.tasks.map((task) => {
-          if (task.id === Number(action.id)) {
-            return {
-              name: task.name,
-              id: task.id,
-              completed: action.state,
-            };
+          if (task.id === action.id) {
+            return { id: task.id, name: task.name, completed: action.state };
           } else {
             return { id: task.id, name: task.name, completed: task.completed };
           }
@@ -77,13 +73,14 @@ const reducer = (state, action) => {
         tasks: state.tasks.filter((task) => !task.completed),
       };
     case actionTypes.reorderTasks:
-      const tempState = state.tasks.map(({ id, name, completed }) => ({ id, name, completed }));
-      const element = tempState[action.result.source.index];
-      tempState.splice(action.result.source.index, 1);
-      tempState.splice(action.result.destination.index, 0, element);
+      console.log(action.result);
+      const items = [...state.tasks];
+      const [reorderedItem] = items.splice(action.result.source.index, 1);
+      items.splice(action.result.destination.index, 0, reorderedItem);
+      console.log(items);
       return {
         ...state,
-        tasks: tempState,
+        tasks: items,
       };
     default:
       return state;
