@@ -29,15 +29,13 @@ const TodoList = () => {
           <Droppable droppableId="todo">
             {(provided) => (
               <TodoListItemsWrapper {...provided.droppableProps} ref={provided.innerRef}>
-                {tasks.map((data, index) => {
-                  if (filterMap[activeFilter](data)) {
-                    return (
-                      <Draggable key={data.id} draggableId={`${data.id}`} index={index}>
-                        {(provided) => <TodoListItem titleData={data.name} key={data.id} dataId={data.id} taskState={data.completed} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} />}
-                      </Draggable>
-                    );
-                  }
-                })}
+                {tasks.map((data, index) =>
+                  filterMap[activeFilter](data) ? (
+                    <Draggable key={data.id} draggableId={`${data.id}`} index={index}>
+                      {(provided) => <TodoListItem titleData={data.name} key={data.id} dataId={data.id} taskState={data.completed} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} />}
+                    </Draggable>
+                  ) : null
+                )}
                 {provided.placeholder}
               </TodoListItemsWrapper>
             )}
