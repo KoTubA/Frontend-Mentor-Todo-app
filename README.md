@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5337c682-ba48-468c-8396-e09575f16b12/deploy-status)](https://app.netlify.com/sites/silly-dijkstra-3caca9/deploys)
 
-It is a solution to the [Todo app challenge on Frontend Mentor.](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW) This application includes functionalities such as dark/light theme toggle and the ability to drag and drop to reorder items in a list.
+It is a solution to the [Todo app challenge on Frontend Mentor.](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW) The app includes functionalities such as dark/light theme toggle and the ability to drag and drop to reorder items in a list.
 
 ![Design preview for the Manage landing page coding challenge](./design/desktop-preview.jpg)
 
