@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Circle } from 'components/atoms/Circle/Cricle';
-import check from 'assets/icons/icon-check.svg';
 
 export const CompleteButton = styled(Circle)`
   display: flex;
