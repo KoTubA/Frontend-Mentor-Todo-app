@@ -5,6 +5,7 @@ import { Wrapper, AppContainer } from './TodoWrapper.styles';
 import FormField from 'components/molecules/FormField/FormField';
 import { Notification } from 'components/atoms/Notification/Notidication';
 import { useTodo } from 'provider/TodoStore';
+import TodoFilter from 'components/molecules/TodoFilter/TodoFilter';
 
 const TodoWrapper = () => {
   const {
@@ -30,6 +31,7 @@ const TodoWrapper = () => {
         <Header />
         <FormField label="Add new todo" name="title" id="title" placeholder="Create a new todo…" value={taskValue} onChange={handleChangeTask} onKeyUp={handleAddTask} />
         <TodoList />
+        <TodoFilter isSecond={true} />
         {tasks.length ? <Notification>Drag and drop to reorder list</Notification> : null}
       </AppContainer>
     </Wrapper>
