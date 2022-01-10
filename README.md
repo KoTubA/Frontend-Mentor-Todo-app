@@ -11,13 +11,13 @@ It is a solution to the [Todo app challenge on Frontend Mentor.](https://www.fro
 **1. Clone this repository:**
 
 ```
-git clone https://github.com/KoTubA/Todo-app.git
+git clone https://github.com/KoTubA/Frontend-Mentor-Todo-app.git
 ```
 
 or:
 
 ```
-git clone git@github.com:KoTubA/Todo-app.git
+git clone git@github.com:KoTubA/Frontend-Mentor-Todo-app.git
 ```
 
 ## Available Scripts
